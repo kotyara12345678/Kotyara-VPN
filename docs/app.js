@@ -115,10 +115,20 @@
       }
     );
 
+    var version = String(release.tag_name || '').replace(/^v/i, '');
+    var date = release.published_at
+      ? new Date(release.published_at).toLocaleDateString('ru-RU', {
+          day: 'numeric',
+          month: 'long',
+        })
+      : '';
+
     Array.prototype.forEach.call(
       document.querySelectorAll('[data-release-version]'),
       function (node) {
-        node.textContent = 'Сейчас доступна версия ' + release.tag_name + '.';
+        node.textContent = date
+          ? 'Версия ' + version + ' от ' + date + '.'
+          : 'Версия ' + version + '.';
       }
     );
   }
