@@ -66,4 +66,108 @@
       if (image.complete && image.naturalWidth === 0) replaceWithPlaceholder(image);
     });
   });
+
+  /* --- ссылки на скачивание ---------------------------------------------
+     В кнопках уже лежат прямые ссылки на конкретную версию. При новом
+     релизе их можно не править: скрипт спрашивает у GitHub последний
+     релиз и подставляет свежие файлы. Если запрос не удался (нет сети,
+     лимит запросов, файл открыт с диска) — остаются обычные ссылки. */
+
+  var GITHUB_REPO = 'kotyara12345678/Kotyara-VPN';
+  var RELEASE_CACHE_KEY = 'kotyara-doc-release';
+  var CACHE_TTL = 6 * 60 * 60 * 1000;
+  var FILE_KINDS = {
+    apk: { label: 'APK', test: /\.apk$/i },
+    exe: { label: 'Setup.exe', test: /-setup\.exe$/i },
+    deb: { label: '.deb', test: /\.deb$/i },
+    appimage: { label: 'AppImage', test: /\.appimage$/i },
+  };
+
+  function fileSize(bytes) {
+    var mb = bytes / (1024 * 1024);
+    if (mb >= 10) return Math.round(mb) + ' МБ';
+    return mb.toFixed(1).replace('.', ',') + ' МБ';
+  }
+
+  function applyRelease(release) {
+    if (!release || !release.assets) return;
+
+    Array.prototype.forEach.call(
+      document.querySelectorAll('[data-download]'),
+      function (link) {
+        var kind = FILE_KINDS[link.getAttribute('data-download')];
+        if (!kind) return;
+
+        var asset = release.assets.filter(function (item) {
+          return kind.test.test(item.name);
+        })[0];
+        if (!asset) return;
+
+        link.href = asset.browser_download_url;
+
+        var note = link.querySelector('[data-download-note]');
+        if (note) {
+          var sub = link.getAttribute('data-download-sub');
+          note.textContent = [kind.label, fileSize(asset.size)]
+            .concat(sub ? [sub] : [])
+            .join(' · ');
+        }
+      }
+    );
+
+    Array.prototype.forEach.call(
+      document.querySelectorAll('[data-release-version]'),
+      function (node) {
+        node.textContent = 'Сейчас доступна версия ' + release.tag_name + '.';
+      }
+    );
+  }
+
+  function readCachedRelease() {
+    try {
+      var raw = localStorage.getItem(RELEASE_CACHE_KEY);
+      if (!raw) return null;
+      var cached = JSON.parse(raw);
+      if (!cached || Date.now() - cached.time > CACHE_TTL) return null;
+      return cached.release;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function loadRelease() {
+    if (!document.querySelector('[data-download]')) return;
+
+    var cached = readCachedRelease();
+    if (cached) {
+      applyRelease(cached);
+      return;
+    }
+
+    if (!window.fetch) return;
+
+    fetch('https://api.github.com/repos/' + GITHUB_REPO + '/releases/latest', {
+      headers: { Accept: 'application/vnd.github+json' },
+    })
+      .then(function (response) {
+        return response.ok ? response.json() : null;
+      })
+      .then(function (release) {
+        if (!release || !release.assets) return;
+        applyRelease(release);
+        try {
+          localStorage.setItem(
+            RELEASE_CACHE_KEY,
+            JSON.stringify({ time: Date.now(), release: release })
+          );
+        } catch (error) {
+          /* хранилище недоступно — не страшно */
+        }
+      })
+      .catch(function () {
+        /* нет сети — оставляем ссылки из разметки */
+      });
+  }
+
+  loadRelease();
 })();

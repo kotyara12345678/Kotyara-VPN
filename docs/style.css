@@ -330,6 +330,43 @@ li {
   border: 2px solid var(--accent);
 }
 
+/* Кнопка скачивания в две строки: что скачать и сколько весит. */
+.btn.col {
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1.25;
+}
+
+.btn .btn-note {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin: 26px 0 8px;
+}
+
+.download-grid .btn {
+  margin: 0;
+  width: 100%;
+  min-height: 84px;
+  padding: 16px 20px;
+}
+
+.download-grid .btn .btn-title {
+  font-size: calc(var(--fs-base) + 1px);
+}
+
+.download-hint {
+  margin: 10px 0 4px;
+  color: var(--muted);
+  font-size: var(--fs-small);
+}
+
 .btn.secondary:hover {
   color: var(--accent-dark);
   border-color: var(--accent-dark);
