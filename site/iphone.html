@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>iPhone и iPad — Kotyara VPN</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23b7f34b'/><text x='32' y='46' font-family='Arial' font-size='40' font-weight='bold' text-anchor='middle' fill='%23111720'>K</text></svg>" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">K</span>
+        Kotyara VPN
+      </a>
+      <div class="size-buttons" aria-label="Размер текста">
+        <button type="button" data-set-size="normal" title="Обычный текст">A−</button>
+        <button type="button" data-set-size="large" title="Крупный текст">A+</button>
+      </div>
+    </header>
+
+    <main>
+      <a class="back" href="index.html">← Назад к выбору устройства</a>
+      <h1>iPhone или iPad</h1>
+      <p class="lead">
+        На iPhone мы используем бесплатное приложение WireGuard из App Store —
+        отдельное приложение Kotyara VPN там не нужно.
+      </p>
+
+      <div class="note">
+        <p>
+          Вам понадобится <strong>файл настроек</strong> с окончанием
+          <strong>.conf</strong> — его присылает тот, кто выдал доступ (или он
+          есть в личном кабинете на сайте). Один файл — одно устройство: не
+          ставьте один и тот же файл на два телефона.
+        </p>
+      </div>
+
+      <a class="btn" href="https://apps.apple.com/app/wireguard/id1441195209"
+        >Установить WireGuard</a
+      >
+
+      <div class="steps">
+        <section class="step">
+          <h3>Установите приложение WireGuard</h3>
+          <p>
+            Нажмите кнопку выше, в App Store нажмите
+            <strong>«Загрузить»</strong>, затем <strong>«Открыть»</strong>.
+          </p>
+          <figure class="shot">
+            <img
+              src="assets/screens/ios-1-appstore.png"
+              alt="WireGuard в App Store"
+              data-placeholder="Скриншот: WireGuard в App Store, кнопка «Загрузить»"
+            />
+            <figcaption>Приложение бесплатное, разработчик — WireGuard</figcaption>
+          </figure>
+        </section>
+
+        <section class="step">
+          <h3>Сохраните файл .conf на телефоне</h3>
+          <p>
+            Откройте файл, который вам прислали (например, в Telegram или почте),
+            и нажмите <strong>«Поделиться»</strong> →
+            <strong>«Сохранить в Файлы»</strong>. Если файл уже в «Файлах» — этот
+            шаг можно пропустить.
+          </p>
+        </section>
+
+        <section class="step">
+          <h3>Откройте WireGuard и нажмите «+»</h3>
+          <p>
+            В правом верхнем углу — кнопка <strong>«+»</strong>. В меню выберите
+            <strong>«Импорт из файла или архива»</strong> (Create from file or
+            archive).
+          </p>
+          <figure class="shot">
+            <img
+              src="assets/screens/ios-2-add.png"
+              alt="Меню добавления туннеля"
+              data-placeholder="Скриншот: кнопка «+» и меню добавления"
+            />
+            <figcaption>Выберите «Импорт из файла или архива»</figcaption>
+          </figure>
+        </section>
+
+        <section class="step">
+          <h3>Выберите файл .conf</h3>
+          <p>
+            Откроется список файлов — найдите свой (например,
+            <strong>kotyara-21.conf</strong>) и нажмите на него. Приложение
+            спросит название — можно оставить как есть и нажать
+            <strong>«Сохранить»</strong>.
+          </p>
+          <figure class="shot">
+            <img
+              src="assets/screens/ios-3-file.png"
+              alt="Выбор файла конфигурации"
+              data-placeholder="Скриншот: выбор файла .conf в «Файлах»"
+            />
+            <figcaption>Файлы лежат в приложении «Файлы»</figcaption>
+          </figure>
+        </section>
+
+        <section class="step">
+          <h3>Разрешите VPN</h3>
+          <p>
+            iPhone спросит: «WireGuard хочет добавить конфигурации VPN». Нажмите
+            <strong>«Разрешить»</strong> и подтвердите Face ID, Touch ID или
+            кодом экрана.
+          </p>
+          <figure class="shot">
+            <img
+              src="assets/screens/ios-4-allow.png"
+              alt="Запрос разрешения на добавление VPN"
+              data-placeholder="Скриншот: «Разрешить» добавление VPN"
+            />
+            <figcaption>Это стандартный запрос iOS, он нужен один раз</figcaption>
+          </figure>
+        </section>
+
+        <section class="step">
+          <h3>Включите переключатель</h3>
+          <p>
+            В списке появится ваш туннель (например, kotyara-21). Нажмите на
+            переключатель рядом с ним — он станет зелёным, а вверху экрана
+            появится значок VPN. Готово.
+          </p>
+          <figure class="shot">
+            <img
+              src="assets/screens/ios-5-on.png"
+              alt="Туннель включён"
+              data-placeholder="Скриншот: переключатель включён, значок VPN"
+            />
+            <figcaption>Переключатель зелёный — VPN работает</figcaption>
+          </figure>
+        </section>
+      </div>
+
+      <h2>Если что-то пошло не так</h2>
+      <ul>
+        <li>
+          Не подключается — выключите и включите переключатель ещё раз.
+        </li>
+        <li>
+          Мешает iCloud Private Relay: «Настройки» → ваше имя → «iCloud» →
+          «Private Relay» → выключить, или «Настройки» → «Сотовые данные» →
+          «Ограничение отслеживания IP-адреса» → выключить.
+        </li>
+        <li>
+          Файл не открывается — убедитесь, что он заканчивается на
+          <strong>.conf</strong>, а не на .txt.
+        </li>
+      </ul>
+      <p>
+        Больше подсказок — на странице <a href="help.html">«Если что-то не
+        работает»</a>.
+      </p>
+    </main>
+
+    <footer>
+      Kotyara VPN ·
+      <a href="https://apps.apple.com/app/wireguard/id1441195209">WireGuard</a> ·
+      <a href="help.html">Помощь</a>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,399 @@
+/* Kotyara VPN — инструкции.
+   Светлая тема и крупный шрифт: страницу читают с телефона, часто
+   пожилые люди. Никаких внешних шрифтов и библиотек — всё работает офлайн. */
+
+:root {
+  --bg: #f6f7f9;
+  --card: #ffffff;
+  --text: #16181d;
+  --muted: #5a6270;
+  --border: #dfe3ea;
+  --accent: #1f6feb;
+  --accent-dark: #1758bd;
+  --ok: #1a7f45;
+  --warn: #a86500;
+  --radius: 16px;
+  --fs-base: 19px;
+  --fs-lead: 22px;
+  --fs-h1: 38px;
+  --fs-h2: 27px;
+  --fs-small: 16px;
+}
+
+:root[data-size='large'] {
+  --fs-base: 23px;
+  --fs-lead: 26px;
+  --fs-h1: 44px;
+  --fs-h2: 32px;
+  --fs-small: 19px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif;
+  font-size: var(--fs-base);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--accent-dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- шапка ------------------------------------------------------------- */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+
+.topbar .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: calc(var(--fs-base) + 1px);
+  color: var(--text);
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.topbar .brand .brand-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #c6f76a, #8fdc2f);
+  color: #111720;
+  font-size: 21px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.size-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.size-buttons button {
+  min-width: 48px;
+  min-height: 44px;
+  padding: 0 10px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--text);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.size-buttons button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* --- содержимое -------------------------------------------------------- */
+
+main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 28px 20px 64px;
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  color: var(--muted);
+  margin: 10px 0 26px;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  line-height: 1.2;
+  margin: 18px 0 6px;
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  line-height: 1.3;
+  margin: 42px 0 14px;
+}
+
+p {
+  margin: 0 0 16px;
+}
+
+ul,
+ol {
+  margin: 0 0 18px;
+  padding-left: 28px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 4px;
+  font-size: var(--fs-small);
+  font-weight: 700;
+}
+
+/* --- выбор устройства -------------------------------------------------- */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 26px 0 10px;
+}
+
+.card {
+  display: block;
+  padding: 22px;
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  text-decoration: none;
+  transition:
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  color: var(--text);
+}
+
+.card .emoji {
+  font-size: 40px;
+  line-height: 1;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.card strong {
+  display: block;
+  font-size: calc(var(--fs-base) + 3px);
+  margin-bottom: 4px;
+}
+
+.card span {
+  color: var(--muted);
+  font-size: var(--fs-small);
+}
+
+/* --- шаги -------------------------------------------------------------- */
+
+.steps {
+  counter-reset: step;
+  display: grid;
+  gap: 22px;
+  margin: 22px 0 10px;
+}
+
+.step {
+  position: relative;
+  padding: 22px 22px 18px 78px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.step::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 800;
+  font-size: calc(var(--fs-base) + 1px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step h3 {
+  font-size: calc(var(--fs-base) + 3px);
+  margin: 6px 0 8px;
+}
+
+.step p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- скриншоты --------------------------------------------------------- */
+
+.shot {
+  margin: 16px 0 4px;
+  text-align: center;
+}
+
+.shot img {
+  display: block;
+  margin: 0 auto;
+  max-height: 620px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(22, 24, 29, 0.12);
+}
+
+.shot figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: var(--fs-small);
+}
+
+/* Пока скриншота нет, вместо пустого места показываем подсказку:
+   страница остаётся понятной и без картинок. */
+.shot-missing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  padding: 18px;
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  background: #fbfcfe;
+  color: var(--muted);
+  font-size: var(--fs-small);
+  text-align: center;
+}
+
+/* --- кнопки и плашки --------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 60px;
+  padding: 14px 26px;
+  margin: 8px 0;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 14px;
+  font-size: calc(var(--fs-base) + 1px);
+  font-weight: 800;
+  text-decoration: none;
+  border: none;
+}
+
+.btn:hover {
+  background: var(--accent-dark);
+  color: #fff;
+}
+
+.btn.secondary {
+  background: var(--card);
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+
+.btn.secondary:hover {
+  color: var(--accent-dark);
+  border-color: var(--accent-dark);
+}
+
+.note {
+  padding: 16px 18px;
+  margin: 18px 0;
+  border-left: 5px solid var(--accent);
+  border-radius: 8px;
+  background: #eef4ff;
+}
+
+.note.ok {
+  border-color: var(--ok);
+  background: #ecf8f1;
+}
+
+.note.warn {
+  border-color: var(--warn);
+  background: #fff6e6;
+}
+
+.note p:last-child {
+  margin-bottom: 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: #eef4ff;
+  color: var(--accent);
+  font-size: var(--fs-small);
+  font-weight: 700;
+}
+
+/* --- подвал ------------------------------------------------------------ */
+
+footer {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+  color: var(--muted);
+  font-size: var(--fs-small);
+  border-top: 1px solid var(--border);
+}
+
+footer a {
+  font-weight: 700;
+}
+
+@media (max-width: 520px) {
+  .step {
+    padding: 18px 16px 16px 16px;
+  }
+
+  .step::before {
+    position: static;
+    display: inline-flex;
+    margin-bottom: 8px;
+  }
+
+  .shot img {
+    max-height: 460px;
+  }
+}

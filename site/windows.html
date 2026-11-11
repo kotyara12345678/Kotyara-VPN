@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Компьютер Windows — Kotyara VPN</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23b7f34b'/><text x='32' y='46' font-family='Arial' font-size='40' font-weight='bold' text-anchor='middle' fill='%23111720'>K</text></svg>" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">K</span>
+        Kotyara VPN
+      </a>
+      <div class="size-buttons" aria-label="Размер текста">
+        <button type="button" data-set-size="normal" title="Обычный текст">A−</button>
+        <button type="button" data-set-size="large" title="Крупный текст">A+</button>
+      </div>
+    </header>
+
+    <main>
+      <a class="back" href="index.html">← Назад к выбору устройства</a>
+      <h1>Компьютер на Windows</h1>
+      <p class="lead">
+        Устанавливается как обычная программа. Нужен код приглашения, если вы
+        регистрируетесь впервые, или логин и пароль, если аккаунт уже есть.
+      </p>
+
+      <a
+        class="btn"
+        href="https://github.com/kotyara12345678/Kotyara-VPN/releases/latest"
+        >Скачать установщик</a
+      >
+
+      <div class="steps">
+        <section class="step">
+          <h3>Скачайте файл Setup.exe</h3>
+          <p>
+            На странице скачивания выберите файл, который заканчивается на
+            <strong>-Setup.exe</strong>. Он сохранится в папку «Загрузки».
+          </p>
+          <figure class="shot">
+            <img
+              src="assets/screens/win-1-download.png"
+              alt="Страница скачивания установщика"
+              data-placeholder="Скриншот: страница скачивания с файлом -Setup.exe"
+            />
+            <figcaption>Файл с окончанием -Setup.exe</figcaption>
+          </figure>
+        </section>
+
+        <section class="step">
+          <h3>Запустите установщик</h3>
+          <p>
+            Откройте файл двойным щелчком. Если Windows покажет синее окно
+            «Защита Windows SmartScreen», нажмите
+            <strong>«Подробнее»</strong> → <strong>«Выполнить всё равно»</strong>.
+          </p>
+          <figure class="shot">
+            <img
+              src="assets/screens/win-2-smartscreen.png"
+              alt="Окно SmartScreen с кнопкой Подробнее"
+              data-placeholder="Скриншот: SmartScreen, кнопка «Подробнее»"
+            />
+            <figcaption>Так Windows предупреждает о новых программах</figcaption>
+          </figure>
+        </section>
+
+        <section class="step">
+          <h3>Нажмите «Установить»</h3>
+          <p>
+            В окне установки нажмите <strong>«Далее»</strong> и затем
+            <strong>«Установить»</strong>. Через минуту на рабочем столе
+            появится значок Kotyara VPN.
+          </p>
+          <figure class="shot">
+            <img
+              src="assets/screens/win-3-install.png"
+              alt="Окно установки программы"
+              data-placeholder="Скриншот: окно установки с кнопкой «Установить»"
+            />
+            <figcaption>Обычный установщик, ничего выбирать не нужно</figcaption>
+          </figure>
+        </section>
+
+        <section class="step">
+          <h3>Войдите в приложение</h3>
+          <p>
+            Откройте Kotyara VPN. Введите имя пользователя и пароль, которые
+            придумали при регистрации, и нажмите <strong>«Войти»</strong>.
+          </p>
+          <p>
+            Если аккаунта ещё нет — нажмите <strong>«Регистрация»</strong> и
+            введите код приглашения.
+          </p>
+          <figure class="shot">
+            <img
+              src="assets/screens/win-4-login.png"
+              alt="Экран входа в приложении на компьютере"
+              data-placeholder="Скриншот: экран входа на компьютере"
+            />
+            <figcaption>Логин и пароль — те же, что на телефоне</figcaption>
+          </figure>
+        </section>
+
+        <section class="step">
+          <h3>Нажмите «Подключиться»</h3>
+          <p>
+            На главном экране нажмите большую кнопку с щитом. Когда статус
+            сменится на <strong>«Подключено»</strong>, VPN работает.
+          </p>
+          <p>
+            Если Windows спросит разрешение на создание сетевого подключения —
+            нажмите <strong>«Да»</strong>.
+          </p>
+          <figure class="shot">
+            <img
+              src="assets/screens/win-5-connected.png"
+              alt="Подключённое состояние на компьютере"
+              data-placeholder="Скриншот: главный экран, статус «Подключено»"
+            />
+            <figcaption>Кнопка подключения остаётся включённой</figcaption>
+          </figure>
+        </section>
+      </div>
+
+      <div class="note">
+        <p>
+          На компьютере и на телефоне можно войти <strong>в один аккаунт</strong> —
+          каждое устройство получит своё подключение, и они не будут мешать друг
+          другу.
+        </p>
+      </div>
+
+      <h2>Если что-то пошло не так</h2>
+      <ul>
+        <li>
+          Установщик не запускается — нажмите правой кнопкой → «Запуск от имени
+          администратора».
+        </li>
+        <li>
+          Windows блокирует — «Подробнее» → «Выполнить всё равно» (файл подписан,
+          это просто предупреждение для новых программ).
+        </li>
+        <li>
+          Не подключается — проверьте интернет и нажмите «Отключить», затем
+          «Подключиться» заново.
+        </li>
+      </ul>
+      <p>
+        Больше подсказок — на странице <a href="help.html">«Если что-то не
+        работает»</a>.
+      </p>
+    </main>
+
+    <footer>
+      Kotyara VPN ·
+      <a href="https://github.com/kotyara12345678/Kotyara-VPN/releases/latest"
+        >Все установочные файлы</a
+      >
+      ·
+      <a href="help.html">Помощь</a>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
