@@ -1,5 +1,5 @@
-/* Общий скрипт страниц: размер шрифта и заглушки для ещё не готовых
-   скриншотов. Без зависимостей, работает и при открытии файла с диска. */
+/* Общий скрипт страниц: размер шрифта и актуальные файлы в кнопках
+   скачивания. Без зависимостей, работает и при открытии файла с диска. */
 
 (function () {
   var root = document.documentElement;
@@ -31,47 +31,12 @@
     setSize(button.getAttribute('data-set-size'));
   });
 
-  /* Скриншоты добавляются постепенно. Пока файла нет, показываем рамку с
-     подписью «что здесь будет» — страница не выглядит сломанной. */
-  function replaceWithPlaceholder(image) {
-    /* Логотип и прочие декоративные картинки не превращаем в заглушки:
-       подсказка нужна только там, где ожидается скриншот шага. */
-    var figure = image.closest('.shot');
-    if (!figure) return;
-    var text =
-      image.getAttribute('data-placeholder') ||
-      image.getAttribute('alt') ||
-      'Скриншот скоро появится';
-
-    var box = document.createElement('div');
-    box.className = 'shot-missing';
-    box.textContent = text;
-
-    if (image.parentNode) image.parentNode.replaceChild(box, image);
-    if (figure) figure.classList.add('shot-pending');
-  }
-
-  document.addEventListener(
-    'error',
-    function (event) {
-      var target = event.target;
-      if (target && target.tagName === 'IMG') replaceWithPlaceholder(target);
-    },
-    true
-  );
-
-  /* Картинки, которые не успели загрузиться до подключения обработчика. */
-  window.addEventListener('load', function () {
-    Array.prototype.forEach.call(document.images, function (image) {
-      if (image.complete && image.naturalWidth === 0) replaceWithPlaceholder(image);
-    });
-  });
-
   /* --- ссылки на скачивание ---------------------------------------------
-     В кнопках уже лежат прямые ссылки на конкретную версию. При новом
-     релизе их можно не править: скрипт спрашивает у GitHub последний
-     релиз и подставляет свежие файлы. Если запрос не удался (нет сети,
-     лимит запросов, файл открыт с диска) — остаются обычные ссылки. */
+     В кнопках лежат ссылки на страницу последнего релиза, поэтому они не
+     ломаются никогда. Скрипт спрашивает у GitHub последний релиз и
+     подставляет прямой файл, его размер и номер версии. Если запрос не
+     удался (нет сети, лимит запросов, файл открыт с диска) — остаются
+     обычные ссылки. */
 
   var GITHUB_REPO = 'kotyara12345678/Kotyara-VPN';
   var RELEASE_CACHE_KEY = 'kotyara-doc-release';
@@ -92,6 +57,8 @@
   function applyRelease(release) {
     if (!release || !release.assets) return;
 
+    var version = String(release.tag_name || '').replace(/^v/i, '');
+
     Array.prototype.forEach.call(
       document.querySelectorAll('[data-download]'),
       function (link) {
@@ -110,25 +77,26 @@
           var sub = link.getAttribute('data-download-sub');
           note.textContent = [kind.label, fileSize(asset.size)]
             .concat(sub ? [sub] : [])
+            .concat(version ? ['v' + version] : [])
             .join(' · ');
         }
       }
     );
 
-    var version = String(release.tag_name || '').replace(/^v/i, '');
     var date = release.published_at
       ? new Date(release.published_at).toLocaleDateString('ru-RU', {
           day: 'numeric',
           month: 'long',
         })
       : '';
+    var label = version
+      ? 'Версия ' + version + (date ? ' от ' + date : '')
+      : '';
 
     Array.prototype.forEach.call(
       document.querySelectorAll('[data-release-version]'),
       function (node) {
-        node.textContent = date
-          ? 'Версия ' + version + ' от ' + date + '.'
-          : 'Версия ' + version + '.';
+        node.textContent = label ? label + '.' : '';
       }
     );
   }
@@ -146,7 +114,9 @@
   }
 
   function loadRelease() {
-    if (!document.querySelector('[data-download]')) return;
+    if (!document.querySelector('[data-download], [data-release-version]')) {
+      return;
+    }
 
     var cached = readCachedRelease();
     if (cached) {

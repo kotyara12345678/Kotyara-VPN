@@ -4,33 +4,51 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Если что-то не работает — Kotyara VPN</title>
+    <meta
+      name="description"
+      content="Частые проблемы с Kotyara VPN и что нажать, чтобы их решить."
+    />
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23b7f34b'/><text x='32' y='46' font-family='Arial' font-size='40' font-weight='bold' text-anchor='middle' fill='%23111720'>K</text></svg>" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23b7f34b'/><text x='32' y='46' font-family='Arial' font-size='40' font-weight='bold' text-anchor='middle' fill='%230a0d12'>K</text></svg>" />
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="index.html">
-        <span class="brand-mark" aria-hidden="true">K</span>
-        Kotyara VPN
-      </a>
-      <div class="size-buttons" aria-label="Размер текста">
-        <button type="button" data-set-size="normal" title="Обычный текст">A−</button>
-        <button type="button" data-set-size="large" title="Крупный текст">A+</button>
+      <div class="topbar-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">K</span>
+          Kotyara VPN
+        </a>
+        <nav class="nav">
+          <a href="android.html">Android</a>
+          <a href="iphone.html">iPhone</a>
+          <a href="windows.html">Windows</a>
+          <a href="help.html" aria-current="page">Помощь</a>
+        </nav>
+        <div class="size-buttons" aria-label="Размер текста">
+          <button type="button" data-set-size="normal" title="Обычный текст">A−</button>
+          <button type="button" data-set-size="large" title="Крупный текст">A+</button>
+        </div>
       </div>
     </header>
 
     <main>
-      <a class="back" href="index.html">← Назад к выбору устройства</a>
+      <a class="back" href="index.html">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14 6l-6 6 6 6" />
+        </svg>
+        Выбор устройства
+      </a>
+
       <h1>Если что-то не работает</h1>
       <p class="lead">
-        Сначала попробуйте самое простое: закройте приложение полностью и
-        откройте заново, затем нажмите «Отключить» и снова «Подключиться».
-        В большинстве случаев этого достаточно.
+        Сначала попробуйте самое простое: закройте приложение полностью и откройте
+        заново, затем нажмите «Отключить» и снова «Подключиться». В большинстве
+        случаев этого достаточно.
       </p>
 
       <h2>Не подключается</h2>
       <ol>
-        <li>Проверьте, что интернет работает: откройте любой сайт.</li>
+        <li>Проверьте, что интернет работает: откройте любой сайт без VPN.</li>
         <li>Нажмите «Отключить», подождите 3 секунды, нажмите «Подключиться».</li>
         <li>Выключите и включите Wi-Fi или мобильные данные.</li>
         <li>Перезапустите приложение.</li>
@@ -41,17 +59,22 @@
         <li>Нажмите «Отключить» — интернет должен вернуться.</li>
         <li>Снова нажмите «Подключиться» и подождите 10 секунд.</li>
         <li>
-          Если не помогло — перезагрузите телефон или компьютер и попробуйте
-          снова.
+          Если не помогло — перезагрузите телефон или компьютер и попробуйте снова.
         </li>
       </ol>
 
       <h2>Код приглашения не принимается</h2>
       <ul>
-        <li>Код состоит из 11 символов: 5, дефис, 5. Пример: <span class="badge">HRE9Y-ZDPMM</span>.</li>
+        <li>
+          Код состоит из 11 символов: 5, дефис, 5. Пример:
+          <span class="badge">HRE9Y-ZDPMM</span>.
+        </li>
         <li>Дефис посередине обязателен.</li>
         <li>Код одноразовый: если его уже использовали, попросите новый.</li>
-        <li>Проверьте, что не перепутали <strong>0</strong> (ноль) и <strong>O</strong> (буква).</li>
+        <li>
+          Проверьте, что не перепутали <strong>0</strong> (ноль) и
+          <strong>O</strong> (буква).
+        </li>
       </ul>
 
       <h2>Приложение не устанавливается на Android</h2>
@@ -64,42 +87,63 @@
         <li>Проверьте, что файл заканчивается на <strong>.apk</strong>.</li>
       </ol>
 
+      <div class="note danger">
+        <p class="note-title">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 4 2.8 20h18.4L12 4Z" />
+            <path d="M12 10v4M12 17h.01" />
+          </svg>
+          Пакет недействителен или повреждён
+        </p>
+        <p>
+          Так телефон пишет, когда файл скачался не до конца. Удалите его из
+          «Загрузок» и скачайте снова, лучше по Wi-Fi. Полный файл — около 75 МБ.
+        </p>
+      </div>
+
       <h2>iPhone: VPN не включается</h2>
       <ol>
-        <li>Отключите Private Relay: «Настройки» → ваше имя → «iCloud» → «Private Relay» → выключить.</li>
+        <li>
+          Отключите Private Relay: «Настройки» → ваше имя → «iCloud» → «Private
+          Relay» → выключить.
+        </li>
         <li>Проверьте «Настройки» → «VPN» — там должен быть ваш туннель.</li>
-        <li>Удалите туннель и импортируйте файл заново.</li>
-      </ol>
-
-      <h2>Телевизор: пульт не реагирует или не появляется клавиатура</h2>
-      <ol>
-        <li>Нажмите любую стрелку — подсветка покажет, где вы находитесь.</li>
-        <li>Чтобы ввести текст, нажмите «ОК» на поле ввода ещё раз.</li>
-        <li>На клавиатуре: стрелки — выбор, «ОК» — ввести, «⌫» — стереть, «Готово» — закончить.</li>
+        <li>Удалите туннель и импортируйте файл настроек заново.</li>
       </ol>
 
       <h2>Всё равно не работает</h2>
       <p>
         Напишите тому, кто выдал вам доступ, и опишите, что происходит: на каком
-        устройстве, что написано на экране. Если можете — пришлите фото экрана.
-        Так мы поможем быстрее.
+        устройстве, что написано на экране. Если можете — пришлите фото экрана. Так
+        мы поможем быстрее.
       </p>
 
       <div class="note">
+        <p class="note-title">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3 5 6v6c0 4 3 7 7 9 4-2 7-5 7-9V6l-7-3Z" />
+          </svg>
+          Не передавайте доступ
+        </p>
         <p>
-          Не отправляйте никому файл настроек <strong>.conf</strong> и пароль —
-          это доступ к вашему VPN. Если файл попал не туда, попросите новый.
+          Не отправляйте никому файл настроек <strong>.conf</strong> и пароль — это
+          доступ к вашему VPN. Если файл попал не туда, попросите новый.
         </p>
       </div>
 
-      <p><a class="btn secondary" href="index.html">Вернуться к инструкциям</a></p>
+      <p>
+        <a class="btn secondary" href="index.html">Вернуться к инструкциям</a>
+      </p>
     </main>
 
     <footer>
-      Kotyara VPN ·
-      <a href="https://github.com/kotyara12345678/Kotyara-VPN/releases/latest"
-        >Все установочные файлы</a
-      >
+      <div class="foot-links">
+        <a href="index.html">Все устройства</a>
+        <a href="android.html">Android</a>
+        <a href="iphone.html">iPhone</a>
+        <a href="windows.html">Windows</a>
+      </div>
+      <div class="foot-version">Kotyara VPN · <span data-release-version></span></div>
     </footer>
 
     <script src="app.js"></script>

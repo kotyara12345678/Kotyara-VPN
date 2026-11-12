@@ -3,47 +3,72 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Установка на Android — Kotyara VPN</title>
+    <title>Android — установка Kotyara VPN</title>
+    <meta
+      name="description"
+      content="Пошаговая установка Kotyara VPN на телефон или планшет Android: скачивание, установка, регистрация по коду и подключение."
+    />
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23b7f34b'/><text x='32' y='46' font-family='Arial' font-size='40' font-weight='bold' text-anchor='middle' fill='%23111720'>K</text></svg>" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23b7f34b'/><text x='32' y='46' font-family='Arial' font-size='40' font-weight='bold' text-anchor='middle' fill='%230a0d12'>K</text></svg>" />
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="index.html">
-        <span class="brand-mark" aria-hidden="true">K</span>
-        Kotyara VPN
-      </a>
-      <div class="size-buttons" aria-label="Размер текста">
-        <button type="button" data-set-size="normal" title="Обычный текст">A−</button>
-        <button type="button" data-set-size="large" title="Крупный текст">A+</button>
+      <div class="topbar-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">K</span>
+          Kotyara VPN
+        </a>
+        <nav class="nav">
+          <a href="android.html" aria-current="page">Android</a>
+          <a href="iphone.html">iPhone</a>
+          <a href="windows.html">Windows</a>
+          <a href="help.html">Помощь</a>
+        </nav>
+        <div class="size-buttons" aria-label="Размер текста">
+          <button type="button" data-set-size="normal" title="Обычный текст">A−</button>
+          <button type="button" data-set-size="large" title="Крупный текст">A+</button>
+        </div>
       </div>
     </header>
 
     <main>
-      <a class="back" href="index.html">← Назад к выбору устройства</a>
-      <h1>Телефон или планшет на Android</h1>
+      <a class="back" href="index.html">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14 6l-6 6 6 6" />
+        </svg>
+        Выбор устройства
+      </a>
+
+      <h1>Телефон или планшет Android</h1>
       <p class="lead">
-        Займёт около 5 минут. Понадобится код приглашения — 11 символов с
+        Займёт около пяти минут. Понадобится код приглашения — 11 символов с
         дефисом.
       </p>
 
       <a
         class="btn col"
         data-download="apk"
+        data-download-sub="Android 7 или новее"
         href="https://github.com/kotyara12345678/Kotyara-VPN/releases/latest"
       >
-        <span class="btn-title">Скачать приложение</span>
-        <span class="btn-note" data-download-note="apk">APK · 75 МБ</span>
+        <span class="btn-title">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 4v10m0 0 4-4m-4 4-4-4" />
+            <path d="M5 18h14" />
+          </svg>
+          Скачать приложение
+        </span>
+        <span class="btn-note" data-download-note="apk">APK · Android 7 или новее</span>
       </a>
 
       <div class="steps">
         <section class="step">
           <h3>Скачайте приложение</h3>
           <p>
-            Нажмите синюю кнопку <strong>«Скачать приложение»</strong> выше.
-            Телефон может спросить: «Разрешить скачивание?» — нажмите
-            <strong>«Разрешить»</strong>. Файл скачается в папку «Загрузки»,
-            это займёт минуту-две.
+            Нажмите кнопку <strong>«Скачать приложение»</strong> выше. Телефон
+            может спросить разрешение на скачивание — нажмите
+            <strong>«Разрешить»</strong>. Файл размером около 75 МБ сохранится в
+            папку <strong>«Загрузки»</strong>.
           </p>
           <p class="download-hint">
             Не скачивается? Откройте
@@ -52,148 +77,150 @@
             >
             и нажмите файл с окончанием <strong>.apk</strong>.
           </p>
-          <div class="note warn">
+        </section>
+
+        <section class="step">
+          <h3>Откройте файл и нажмите «Установить»</h3>
+          <p>
+            Когда загрузка закончится, нажмите «Открыть» в уведомлении или
+            найдите файл в папке <strong>«Загрузки»</strong>. Появится окно
+            <strong>«Установить приложение?»</strong> — нажмите
+            <strong>«Установить»</strong> и подождите несколько секунд.
+          </p>
+          <figure class="shot">
+            <img
+              src="assets/screens/android-1-install.jpg"
+              alt="Системное окно «Установить приложение?» с кнопками «Отмена» и «Установить»"
+            />
+            <figcaption>Нажмите «Установить» в правом нижнем углу</figcaption>
+          </figure>
+          <div class="note">
+            <p class="note-title">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3 5 6v6c0 4 3 7 7 9 4-2 7-5 7-9V6l-7-3Z" />
+              </svg>
+              Если телефон попросит разрешение
+            </p>
             <p>
-              Телефон пишет <strong>«Пакет недействителен или повреждён»</strong>?
-              Значит файл скачался не до конца — такое бывает на медленном
-              интернете. Удалите этот файл из «Загрузок» и скачайте заново, лучше
-              по Wi-Fi. Размер файла — около 75 МБ.
+              Может появиться вопрос «Разрешить установку из этого источника?».
+              Включите переключатель и нажмите <strong>«Установить»</strong> ещё
+              раз. Это обычное разрешение, оно нужно один раз.
             </p>
           </div>
         </section>
 
         <section class="step">
-          <h3>Откройте скачанный файл</h3>
-          <p>
-            Когда файл скачается, нажмите «Открыть» в уведомлении — или найдите
-            его в папке «Загрузки» и нажмите на него.
-          </p>
-          <figure class="shot">
-            <img
-              src="assets/screens/android-2-install.png"
-              alt="Окно установки приложения"
-              data-placeholder="Скриншот: окно «Установить приложение?»"
-            />
-            <figcaption>Нажмите «Установить»</figcaption>
-          </figure>
-        </section>
-
-        <section class="step">
-          <h3>Разрешите установку</h3>
-          <p>
-            Телефон может спросить: «Разрешить установку из этого источника?».
-            Нажмите <strong>«Разрешить»</strong> или включите переключатель — это
-            обычное разрешение, оно нужно один раз.
-          </p>
-          <figure class="shot">
-            <img
-              src="assets/screens/android-3-allow.png"
-              alt="Разрешение установки из неизвестного источника"
-              data-placeholder="Скриншот: «Разрешить установку из этого источника»"
-            />
-            <figcaption>Это безопасно: вы ставите наше приложение</figcaption>
-          </figure>
-        </section>
-
-        <section class="step">
           <h3>Откройте приложение и нажмите «Регистрация»</h3>
           <p>
-            На экране входа внизу есть кнопка <strong>«Регистрация»</strong>.
-            Нажмите её — откроется форма, где нужно ввести код приглашения.
+            На экране входа, под полями для логина и пароля, есть кнопка
+            <strong>«Регистрация»</strong>. Нажмите её — откроется форма, где
+            нужно ввести код приглашения.
           </p>
-          <figure class="shot">
-            <img
-              src="assets/screens/android-4-login.png"
-              alt="Экран входа с кнопкой Регистрация"
-              data-placeholder="Скриншот: экран входа, внизу кнопка «Регистрация»"
-            />
-            <figcaption>Кнопка «Регистрация» — в самом низу</figcaption>
-          </figure>
-        </section>          <section class="step">
-            <h3>Введите код приглашения</h3>
-            <p>
-              Нажмите на поле «Код приглашения» — появится клавиатура с
-              крупными кнопками. Стрелками выберите букву или цифру, нажмите
-              <strong>«ОК»</strong>, чтобы ввести. Закончили — нажмите
-              <strong>«Готово»</strong>.
-            </p>
-            <figure class="shot">
-            <img
-              src="assets/screens/android-5-code.png"
-              alt="Ввод кода приглашения на экранной клавиатуре"
-              data-placeholder="Скриншот: ввод кода приглашения на клавиатуре"
-            />
-            <figcaption>Код вводится с экранной клавиатуры</figcaption>
-          </figure>
         </section>
 
-        <section class="step">            <h3>Найдите своё устройство и нажмите «Войти»</h3>
-            <p>
-              Вводите логин и пароль, которые придумали при регистрации, и
-              нажмите <strong>«Войти»</strong>. Если аккаунта ещё нет — это так
-              и будет, введите код приглашения.
-            </p>
-            <p>
-              Будьте внимательны: пароль меняется один раз — при первой
-              регистрации можно придумать его только один раз, а пароль от
-              старой версии придётся вводить заново.
-            </p>
-            <figure class="shot">
-
         <section class="step">
-          <h3>Подключитесь</h3>
+          <h3>Заполните форму регистрации</h3>
           <p>
-            На главном экране нажмите большую круглую кнопку с щитом. Подождите
-            2–5 секунд — надпись сменится на <strong>«Подключено»</strong>.
-            Готово, VPN работает.
+            Введите <strong>инвайт-код</strong> (11 символов с дефисом), придумайте
+            <strong>имя пользователя</strong> и <strong>пароль</strong>, затем
+            повторите пароль в поле <strong>«Подтвердите пароль»</strong> и нажмите
+            <strong>«Зарегистрироваться»</strong>.
           </p>
           <figure class="shot">
             <img
-              src="assets/screens/android-6-connected.png"
-              alt="Главный экран: подключено"
-              data-placeholder="Скриншот: главный экран, статус «Подключено»"
+              src="assets/screens/android-2-register.jpg"
+              alt="Экран регистрации: поля «Инвайт-код», «Имя пользователя», «Пароль», «Подтвердите пароль» и кнопка «Зарегистрироваться»"
             />
-            <figcaption>Так выглядит подключённое состояние</figcaption>
+            <figcaption>Код приглашения — в самом верхнем поле</figcaption>
           </figure>
+          <div class="note warn">
+            <p class="note-title">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 4 2.8 20h18.4L12 4Z" />
+                <path d="M12 10v4M12 17h.01" />
+              </svg>
+              Запомните пароль
+            </p>
+            <p>
+              Код приглашения одноразовый, а придуманный пароль понадобится при
+              каждом входе в приложение. Запишите его.
+            </p>
+          </div>
+        </section>
+
+        <section class="step">
+          <h3>Нажмите круглую кнопку подключения</h3>
+          <p>
+            После регистрации откроется главный экран. На нём — большая круглая
+            кнопка с изображением питания. Нажмите её и подождите 2–5 секунд:
+            надпись сверху сменится с <strong>«Не подключено»</strong> на
+            <strong>«Подключено»</strong>.
+          </p>
+          <figure class="shot">
+            <img
+              src="assets/screens/android-3-connect.jpg"
+              alt="Главный экран приложения с круглой кнопкой подключения и надписью «Не подключено»"
+            />
+            <figcaption>Круглая кнопка — включение и выключение VPN</figcaption>
+          </figure>
+          <p>
+            Ниже видно, к какому серверу вы подключены, пинг и скорость. Если
+            сервер не тот, который нужен, — откройте раздел
+            <strong>«Серверы»</strong> внизу экрана и выберите другой.
+          </p>
         </section>
       </div>
 
       <div class="note ok">
+        <p class="note-title">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3 5 6v6c0 4 3 7 7 9 4-2 7-5 7-9V6l-7-3Z" />
+            <path d="m9 12 2 2 4-4" />
+          </svg>
+          Проверка
+        </p>
         <p>
-          <strong>Проверка:</strong> откройте любой сайт. Если он открывается —
-          всё работает. Кнопка подключения остаётся включённой, пока вы сами не
-          отключите VPN.
+          Откройте любой сайт. Если он открывается — всё работает. VPN остаётся
+          включённым, пока вы сами не нажмёте кнопку ещё раз.
         </p>
       </div>
 
       <h2>Если что-то пошло не так</h2>
       <ul>
         <li>
-          Телефон пишет «Приложение не установлено» — скорее всего, файл
-          скачался не до конца. Скачайте заново.
+          <strong>«Пакет недействителен или повреждён»</strong> — файл скачался не
+          до конца. Удалите его из «Загрузок» и скачайте заново, лучше по Wi-Fi.
         </li>
         <li>
-          Код приглашения не принимается — проверьте дефис и что код ещё не
-          использован. Один код = один человек.
+          <strong>«Приложение не установлено»</strong> — та же причина. Проверьте,
+          что в «Загрузках» лежит файл около 75 МБ, и запустите его снова.
         </li>
         <li>
-          Не подключается — нажмите «Отключить» и снова «Подключиться», проверьте
-          интернет.
+          <strong>Код приглашения не принимается</strong> — проверьте дефис и что
+          код ещё не использован. Один код — один человек.
+        </li>
+        <li>
+          <strong>Не подключается</strong> — нажмите «Отключить» и снова
+          «Подключиться», проверьте интернет.
         </li>
       </ul>
       <p>
-        Больше подсказок — на странице <a href="help.html">«Если что-то не
-        работает»</a>.
+        Больше подсказок — на странице
+        <a href="help.html">«Если что-то не работает»</a>.
       </p>
     </main>
 
     <footer>
-      Kotyara VPN ·
-      <a href="https://github.com/kotyara12345678/Kotyara-VPN/releases/latest"
-        >Все установочные файлы</a
-      >
-      ·
-      <a href="help.html">Помощь</a>
+      <div class="foot-links">
+        <a href="index.html">Все устройства</a>
+        <a href="iphone.html">iPhone</a>
+        <a href="windows.html">Windows</a>
+        <a href="help.html">Помощь</a>
+        <a href="https://github.com/kotyara12345678/Kotyara-VPN/releases/latest"
+          >Все файлы</a
+        >
+      </div>
+      <div class="foot-version">Kotyara VPN · <span data-release-version></span></div>
     </footer>
 
     <script src="app.js"></script>

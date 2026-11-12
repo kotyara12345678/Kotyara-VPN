@@ -3,24 +3,42 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Компьютер Windows — Kotyara VPN</title>
+    <title>Windows — установка Kotyara VPN</title>
+    <meta
+      name="description"
+      content="Пошаговая установка Kotyara VPN на компьютер с Windows 10 или 11: установщик, SmartScreen, вход и подключение."
+    />
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23b7f34b'/><text x='32' y='46' font-family='Arial' font-size='40' font-weight='bold' text-anchor='middle' fill='%23111720'>K</text></svg>" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23b7f34b'/><text x='32' y='46' font-family='Arial' font-size='40' font-weight='bold' text-anchor='middle' fill='%230a0d12'>K</text></svg>" />
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="index.html">
-        <span class="brand-mark" aria-hidden="true">K</span>
-        Kotyara VPN
-      </a>
-      <div class="size-buttons" aria-label="Размер текста">
-        <button type="button" data-set-size="normal" title="Обычный текст">A−</button>
-        <button type="button" data-set-size="large" title="Крупный текст">A+</button>
+      <div class="topbar-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">K</span>
+          Kotyara VPN
+        </a>
+        <nav class="nav">
+          <a href="android.html">Android</a>
+          <a href="iphone.html">iPhone</a>
+          <a href="windows.html" aria-current="page">Windows</a>
+          <a href="help.html">Помощь</a>
+        </nav>
+        <div class="size-buttons" aria-label="Размер текста">
+          <button type="button" data-set-size="normal" title="Обычный текст">A−</button>
+          <button type="button" data-set-size="large" title="Крупный текст">A+</button>
+        </div>
       </div>
     </header>
 
     <main>
-      <a class="back" href="index.html">← Назад к выбору устройства</a>
+      <a class="back" href="index.html">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14 6l-6 6 6 6" />
+        </svg>
+        Выбор устройства
+      </a>
+
       <h1>Компьютер на Windows</h1>
       <p class="lead">
         Устанавливается как обычная программа. Понадобится код приглашения — 11
@@ -34,15 +52,21 @@
         data-download-sub="Windows 10 и 11"
         href="https://github.com/kotyara12345678/Kotyara-VPN/releases/latest"
       >
-        <span class="btn-title">Скачать установщик</span>
-        <span class="btn-note" data-download-note="exe">Setup.exe · 25 МБ</span>
+        <span class="btn-title">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 4v10m0 0 4-4m-4 4-4-4" />
+            <path d="M5 18h14" />
+          </svg>
+          Скачать установщик
+        </span>
+        <span class="btn-note" data-download-note="exe">Setup.exe · Windows 10 и 11</span>
       </a>
 
       <div class="steps">
         <section class="step">
           <h3>Скачайте установщик</h3>
           <p>
-            Нажмите синюю кнопку выше — файл сразу сохранится в папку
+            Нажмите кнопку выше — файл сразу сохранится в папку
             <strong>«Загрузки»</strong>. Кнопка всегда отдаёт самую новую версию:
             номер в имени файла может быть любой, это нормально.
           </p>
@@ -55,11 +79,8 @@
             <img
               src="assets/screens/win-1-download.jpg"
               alt="Список последних скачанных файлов в браузере: установщик Kotyara VPN"
-              data-placeholder="Скриншот: список последних скачанных файлов"
             />
-            <figcaption
-              >Файл с окончанием -Setup.exe и подпись «Готово»</figcaption
-            >
+            <figcaption>Файл с окончанием -Setup.exe и подпись «Готово»</figcaption>
           </figure>
           <p class="download-hint">
             Не скачивается? Откройте
@@ -79,14 +100,13 @@
             которую видит впервые.
           </p>
           <p>
-            Нажмите маленькую ссылку <strong>«Подробнее»</strong> под текстом —
-            на неё показывает красная стрелка.
+            Нажмите маленькую ссылку <strong>«Подробнее»</strong> под текстом — на
+            неё показывает красная стрелка.
           </p>
           <figure class="shot">
             <img
               src="assets/screens/win-2-smartscreen.jpg"
-              alt="Окно «Система Windows защитила ваш компьютер» со ссылкой Подробнее"
-              data-placeholder="Скриншот: окно SmartScreen, ссылка «Подробнее»"
+              alt="Окно «Система Windows защитила ваш компьютер» со ссылкой «Подробнее»"
             />
             <figcaption>Нажмите «Подробнее» — стрелка показывает куда</figcaption>
           </figure>
@@ -107,7 +127,6 @@
             <img
               src="assets/screens/win-3-run-anyway.jpg"
               alt="Кнопка «Выполнить в любом случае» в окне SmartScreen"
-              data-placeholder="Скриншот: кнопка «Выполнить в любом случае»"
             />
             <figcaption>Кнопка «Выполнить в любом случае» — слева</figcaption>
           </figure>
@@ -130,7 +149,6 @@
             <img
               src="assets/screens/win-1-setup.jpg"
               alt="Первое окно установщика Kotyara VPN Setup с кнопкой Next"
-              data-placeholder="Скриншот: окно установщика, кнопка Next"
             />
             <figcaption>Нажмите «Next» — и дальше по подсказкам</figcaption>
           </figure>
@@ -150,20 +168,26 @@
             <strong>не короче 12 символов</strong> — и повторите пароль. Затем
             <strong>«Создать аккаунт»</strong>.
           </p>
-          <p>
-            Пароль запишите: он понадобится, чтобы войти на телефоне или если
-            переустановите программу.
-          </p>
           <figure class="shot">
             <img
               src="assets/screens/win-4-invite.jpg"
               alt="Экран регистрации: поле «Код приглашения», имя, пароль и повтор пароля"
-              data-placeholder="Скриншот: регистрация, поле для кода приглашения"
             />
-            <figcaption
-              >Код приглашения вводится в самое верхнее поле</figcaption
-            >
+            <figcaption>Код приглашения вводится в самое верхнее поле</figcaption>
           </figure>
+          <div class="note warn">
+            <p class="note-title">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 4 2.8 20h18.4L12 4Z" />
+                <path d="M12 10v4M12 17h.01" />
+              </svg>
+              Запомните пароль
+            </p>
+            <p>
+              Он понадобится, чтобы войти на телефоне или если переустановите
+              программу.
+            </p>
+          </div>
         </section>
 
         <section class="step">
@@ -175,8 +199,8 @@
           <p>
             При первом подключении Windows спросит разрешение — нажмите
             <strong>«Да»</strong>. Приложение на секунду закроется и откроется
-            снова уже с правами администратора и сразу подключится. Это нужно
-            один раз.
+            снова уже с правами администратора и сразу подключится. Это нужно один
+            раз.
           </p>
           <p>
             Подождите 2–5 секунд: сверху надпись сменится на
@@ -186,7 +210,6 @@
             <img
               src="assets/screens/win-5-connect.jpg"
               alt="Главный экран приложения с кнопкой подключения и статусом «Не подключено»"
-              data-placeholder="Скриншот: главный экран, кнопка подключения"
             />
             <figcaption>Круглая кнопка с щитом — подключение</figcaption>
           </figure>
@@ -194,10 +217,17 @@
       </div>
 
       <div class="note ok">
+        <p class="note-title">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3 5 6v6c0 4 3 7 7 9 4-2 7-5 7-9V6l-7-3Z" />
+            <path d="m9 12 2 2 4-4" />
+          </svg>
+          Проверка
+        </p>
         <p>
-          <strong>Проверка:</strong> откройте любой сайт — если он открывается,
-          всё работает. Кнопка подключения остаётся включённой, пока вы сами не
-          отключите VPN. Программа обновляется сама.
+          Откройте любой сайт — если он открывается, всё работает. Кнопка
+          подключения остаётся включённой, пока вы сами не отключите VPN.
+          Программа обновляется сама.
         </p>
       </div>
 
@@ -220,37 +250,41 @@
       <h2>Если что-то пошло не так</h2>
       <ul>
         <li>
-          Установщик не запускается — нажмите на файл правой кнопкой →
-          <strong>«Запуск от имени администратора»</strong>.
+          <strong>Установщик не запускается</strong> — нажмите на файл правой
+          кнопкой → <strong>«Запуск от имени администратора»</strong>.
         </li>
         <li>
-          Windows не даёт запустить — <strong>«Подробнее»</strong> →
-          <strong>«Выполнить в любом случае»</strong>. Файл подписан, это обычное
-          предупреждение для новых программ.
+          <strong>Windows не даёт запустить</strong> — «Подробнее» →
+          «Выполнить в любом случае». Файл подписан, это обычное предупреждение
+          для новых программ.
         </li>
         <li>
-          Код приглашения не принимается — проверьте дефис и что код ещё не
-          использован: один код подходит только одному человеку.
+          <strong>Код приглашения не принимается</strong> — проверьте дефис и что
+          код ещё не использован: один код подходит только одному человеку.
         </li>
         <li>
-          Не подключается — проверьте интернет, нажмите «Отключить», затем
-          «Подключиться» ещё раз. Если не помогло, откройте в приложении
-          «Диагностика» и пришлите нам отчёт.
+          <strong>Не подключается</strong> — проверьте интернет, нажмите
+          «Отключить», затем «Подключиться» ещё раз. Если не помогло, откройте в
+          приложении «Диагностика» и пришлите нам отчёт.
         </li>
       </ul>
       <p>
-        Больше подсказок — на странице <a href="help.html">«Если что-то не
-        работает»</a>.
+        Больше подсказок — на странице
+        <a href="help.html">«Если что-то не работает»</a>.
       </p>
     </main>
 
     <footer>
-      Kotyara VPN ·
-      <a href="https://github.com/kotyara12345678/Kotyara-VPN/releases/latest"
-        >Все установочные файлы</a
-      >
-      ·
-      <a href="help.html">Помощь</a>
+      <div class="foot-links">
+        <a href="index.html">Все устройства</a>
+        <a href="android.html">Android</a>
+        <a href="iphone.html">iPhone</a>
+        <a href="help.html">Помощь</a>
+        <a href="https://github.com/kotyara12345678/Kotyara-VPN/releases/latest"
+          >Все файлы</a
+        >
+      </div>
+      <div class="foot-version">Kotyara VPN · <span data-release-version></span></div>
     </footer>
 
     <script src="app.js"></script>

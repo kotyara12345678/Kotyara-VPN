@@ -3,37 +3,48 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kotyara VPN — как подключиться</title>
+    <title>Kotyara VPN — установка и подключение</title>
     <meta
       name="description"
-      content="Пошаговая инструкция: как установить и подключить Kotyara VPN на телефоне, телевизоре и компьютере."
+      content="Пошаговая инструкция: как установить и подключить Kotyara VPN на телефоне, iPhone и компьютере Windows."
     />
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23b7f34b'/><text x='32' y='46' font-family='Arial' font-size='40' font-weight='bold' text-anchor='middle' fill='%23111720'>K</text></svg>" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23b7f34b'/><text x='32' y='46' font-family='Arial' font-size='40' font-weight='bold' text-anchor='middle' fill='%230a0d12'>K</text></svg>" />
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="index.html">
-        <span class="brand-mark" aria-hidden="true">K</span>
-        Kotyara VPN
-      </a>
-      <div class="size-buttons" aria-label="Размер текста">
-        <button type="button" data-set-size="normal" title="Обычный текст">A−</button>
-        <button type="button" data-set-size="large" title="Крупный текст">A+</button>
+      <div class="topbar-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">K</span>
+          Kotyara VPN
+        </a>
+        <nav class="nav">
+          <a href="android.html">Android</a>
+          <a href="iphone.html">iPhone</a>
+          <a href="windows.html">Windows</a>
+          <a href="help.html">Помощь</a>
+        </nav>
+        <div class="size-buttons" aria-label="Размер текста">
+          <button type="button" data-set-size="normal" title="Обычный текст">A−</button>
+          <button type="button" data-set-size="large" title="Крупный текст">A+</button>
+        </div>
       </div>
     </header>
 
     <main>
-      <h1>Как подключить Kotyara VPN</h1>
-      <p class="lead">
-        Выберите своё устройство. Дальше будет короткая инструкция по шагам — с
-        картинками. Всего 4–6 шагов, ничего сложного.
-      </p>
+      <section class="hero">
+        <span class="eyebrow"><span class="dot"></span>Инструкция по установке</span>
+        <h1>Подключение Kotyara VPN</h1>
+        <p class="lead">
+          Выберите своё устройство. Дальше — короткая инструкция по шагам, с
+          фотографиями экрана. Всего несколько шагов, ничего сложного.
+        </p>
+      </section>
 
       <h2>Скачать сразу</h2>
       <p>
-        Нажмите свою кнопку — файл начнёт скачиваться сразу, никуда
-        переходить не нужно.
+        Нажмите свою кнопку — файл начнёт скачиваться сразу, никуда переходить не
+        нужно.
       </p>
 
       <div class="download-grid">
@@ -43,10 +54,14 @@
           data-download-sub="Android 7 или новее"
           href="https://github.com/kotyara12345678/Kotyara-VPN/releases/latest"
         >
-          <span class="btn-title">📱 Android</span>
-          <span class="btn-note" data-download-note="apk"
-            >APK · 75 МБ · Android 7 или новее</span
-          >
+          <span class="btn-title">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 4v10m0 0 4-4m-4 4-4-4" />
+              <path d="M5 18h14" />
+            </svg>
+            Android
+          </span>
+          <span class="btn-note" data-download-note="apk">APK · Android 7 или новее</span>
         </a>
 
         <a
@@ -55,51 +70,69 @@
           data-download-sub="Windows 10 и 11"
           href="https://github.com/kotyara12345678/Kotyara-VPN/releases/latest"
         >
-          <span class="btn-title">💻 Windows</span>
-          <span class="btn-note" data-download-note="exe"
-            >Установщик · 25 МБ · Windows 10 и 11</span
-          >
+          <span class="btn-title">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 4v10m0 0 4-4m-4 4-4-4" />
+              <path d="M5 18h14" />
+            </svg>
+            Windows
+          </span>
+          <span class="btn-note" data-download-note="exe">Установщик · Windows 10 и 11</span>
         </a>
 
         <a
-          class="btn col"
+          class="btn col secondary"
           href="https://apps.apple.com/app/wireguard/id1441195209"
         >
-          <span class="btn-title">📲 iPhone / iPad</span>
+          <span class="btn-title">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 4v10m0 0 4-4m-4 4-4-4" />
+              <path d="M5 18h14" />
+            </svg>
+            iPhone и iPad
+          </span>
           <span class="btn-note">WireGuard из App Store · бесплатно</span>
         </a>
       </div>
 
       <p class="download-hint">
-        Для телевизора скачивайте файл для Android — он же подходит и для
-        приставки. Нужен код приглашения: 11 символов с дефисом.
-        <span data-release-version></span>
+        Кнопки всегда отдают самую новую версию — номер в имени файла может быть
+        любой. <span data-release-version></span>
       </p>
 
-      <h2>Как установить — по шагам</h2>
+      <h2>Инструкция для вашего устройства</h2>
       <div class="cards">
         <a class="card" href="android.html">
-          <span class="emoji" aria-hidden="true">📱</span>
-          <strong>Телефон или планшет Android</strong>
-          <span>Установить приложение и войти по коду</span>
+          <span class="card-icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24">
+              <rect x="6" y="2.5" width="12" height="19" rx="2.5" />
+              <path d="M10.5 18.5h3" />
+            </svg>
+          </span>
+          <strong>Телефон и планшет Android</strong>
+          <span class="card-note">Приложение, вход и подключение в один тап</span>
         </a>
 
         <a class="card" href="iphone.html">
-          <span class="emoji" aria-hidden="true">📲</span>
-          <strong>iPhone или iPad</strong>
-          <span>Через приложение WireGuard из App Store</span>
-        </a>
-
-        <a class="card" href="tv.html">
-          <span class="emoji" aria-hidden="true">📺</span>
-          <strong>Телевизор или ТВ-приставка</strong>
-          <span>Пульт, стрелки и кнопка «ОК»</span>
+          <span class="card-icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24">
+              <rect x="6" y="2.5" width="12" height="19" rx="2.5" />
+              <path d="M10 5h4" />
+            </svg>
+          </span>
+          <strong>iPhone и iPad</strong>
+          <span class="card-note">Через приложение WireGuard и файл настроек</span>
         </a>
 
         <a class="card" href="windows.html">
-          <span class="emoji" aria-hidden="true">💻</span>
+          <span class="card-icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24">
+              <rect x="2.5" y="4" width="19" height="12.5" rx="2" />
+              <path d="M8.5 20h7M12 16.5V20" />
+            </svg>
+          </span>
           <strong>Компьютер Windows</strong>
-          <span>Обычный установщик, как у любой программы</span>
+          <span class="card-note">Обычный установщик, как у любой программы</span>
         </a>
       </div>
 
@@ -114,7 +147,14 @@
         <li>5 минут времени.</li>
       </ul>
 
-      <div class="note">
+      <div class="note warn">
+        <p class="note-title">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 4 2.8 20h18.4L12 4Z" />
+            <path d="M12 10v4M12 17h.01" />
+          </svg>
+          Только один раз
+        </p>
         <p>
           Код приглашения можно использовать <strong>только один раз</strong>. Если
           он не подходит — попросите новый у того, кто его выдал.
@@ -124,18 +164,24 @@
       <h2>Не получилось?</h2>
       <p>
         Откройте <a href="help.html">страницу «Если что-то не работает»</a> — там
-        три самые частые проблемы и что нажать. Если не помогло, напишите нам, и
-        мы поможем.
+        самые частые проблемы и что нажать. Если не помогло, напишите нам, и мы
+        поможем.
       </p>
     </main>
 
     <footer>
-      Kotyara VPN ·
-      <a href="https://github.com/kotyara12345678/Kotyara-VPN/releases/latest"
-        >Все установочные файлы</a
-      >
-      ·
-      <a href="help.html">Помощь</a>
+      <div class="foot-links">
+        <a href="android.html">Android</a>
+        <a href="iphone.html">iPhone</a>
+        <a href="windows.html">Windows</a>
+        <a href="help.html">Помощь</a>
+        <a href="https://github.com/kotyara12345678/Kotyara-VPN/releases/latest"
+          >Все установочные файлы</a
+        >
+      </div>
+      <div class="foot-version">
+        Kotyara VPN · <span data-release-version></span>
+      </div>
     </footer>
 
     <script src="app.js"></script>
