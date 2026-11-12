@@ -51,11 +51,12 @@ workflow-ом `.github/workflows/pages.yml`.
 
 | Файл | Что на нём |
 | --- | --- |
-| `win-1-download.png` | Страница релиза с файлом `…-Setup.exe` |
-| `win-2-smartscreen.png` | SmartScreen, кнопка «Подробнее» |
-| `win-3-install.png` | Окно установщика с кнопкой «Установить» |
-| `win-4-login.png` | Экран входа приложения на компьютере |
-| `win-5-connected.png` | Главный экран, статус «Подключено» |
+| `win-1-download.png` | Скачивание установщика в браузере (ещё не снято) |
+| `win-2-smartscreen.jpg` | SmartScreen, ссылка «Подробнее» |
+| `win-3-run-anyway.jpg` | SmartScreen, кнопка «Выполнить в любом случае» |
+| `win-1-setup.jpg` | Первое окно установщика, кнопка «Next» |
+| `win-4-invite.jpg` | Регистрация: поле «Код приглашения» |
+| `win-5-connect.jpg` | Главный экран, кнопка подключения |
 
 ## Требования к скриншотам
 
