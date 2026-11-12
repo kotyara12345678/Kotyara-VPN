@@ -51,7 +51,7 @@ workflow-ом `.github/workflows/pages.yml`.
 
 | Файл | Что на нём |
 | --- | --- |
-| `win-1-download.png` | Скачивание установщика в браузере (ещё не снято) |
+| `win-1-download.jpg` | Список «Последние скачанные файлы» с установщиком |
 | `win-2-smartscreen.jpg` | SmartScreen, ссылка «Подробнее» |
 | `win-3-run-anyway.jpg` | SmartScreen, кнопка «Выполнить в любом случае» |
 | `win-1-setup.jpg` | Первое окно установщика, кнопка «Next» |
