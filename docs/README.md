@@ -20,7 +20,6 @@ workflow-ом `.github/workflows/pages.yml`.
 
 | Файл | Что на нём |
 | --- | --- |
-| `android-1-download.png` | Страница релиза GitHub с файлом `KotyaraVPN-….apk` (кнопка скачивания) |
 | `android-2-install.png` | Системное окно «Установить приложение?» |
 | `android-3-allow.png` | «Разрешить установку из этого источника» |
 | `android-4-login.png` | Экран входа приложения, внизу видна кнопка «Регистрация» |
