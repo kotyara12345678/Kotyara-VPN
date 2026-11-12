@@ -118,11 +118,11 @@
       return;
     }
 
+    // The cached copy paints the right sizes immediately, but the fetch below
+    // still runs: a new release must show up on the first visit after it is
+    // published, not six hours later.
     var cached = readCachedRelease();
-    if (cached) {
-      applyRelease(cached);
-      return;
-    }
+    if (cached) applyRelease(cached);
 
     if (!window.fetch) return;
 
