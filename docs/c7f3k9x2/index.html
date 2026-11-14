@@ -4,19 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>Конфигурации Kotyara VPN</title>
+    <title>Получить конфигурацию — Kotyara VPN</title>
     <link rel="stylesheet" href="../style.css" />
     <style>
-      .conf-list { list-style: none; padding: 0; margin: 18px 0; display: grid; gap: 8px; }
-      .conf-list li { margin: 0; }
-      .conf {
-        display: flex; align-items: center; justify-content: space-between; gap: 14px;
-        padding: 14px 18px; background: var(--surface); border: 1px solid var(--line);
-        border-radius: var(--radius-sm); color: var(--text); font-weight: 600;
-      }
-      .conf:hover { border-color: rgba(183,243,75,.45); background: var(--surface-2); color: var(--text); }
-      .conf-name { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: .95em; }
-      .conf-dl { color: var(--accent); font-size: var(--fs-small); white-space: nowrap; }
+      .get-wrap { margin: 28px 0 10px; }
+      .btn-get { width: 100%; min-height: 96px; font-size: calc(var(--fs-base) + 4px); flex-direction: column; gap: 6px; }
+      .btn-get small { font-size: var(--fs-small); font-weight: 500; opacity: .8; }
+      .get-result { margin-top: 14px; color: var(--muted); font-size: var(--fs-small); }
+      .get-result b { color: var(--accent); font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; }
     </style>
   </head>
   <body>
@@ -34,91 +29,80 @@
     </header>
 
     <main>
-      <h1>Конфигурации</h1>
+      <h1>Получить конфигурацию</h1>
       <p class="lead">
-        Каждый файл — это одно устройство. Скачивайте по одному: архив с телефона
-        распаковывается неправильно и файлы теряют окончание .conf.
+        Один файл — одно устройство. Нажмите кнопку: страница возьмёт свободный
+        конфиг и скачает его. Если раздаёте доступ, нажимайте заново для каждого
+        человека.
       </p>
+
+      <div class="get-wrap">
+        <a class="btn btn-get" id="get" href="#">
+          Скачать конфигурацию
+          <small>файл .conf, ключи уже внутри</small>
+        </a>
+        <p class="get-result" id="result"></p>
+      </div>
 
       <div class="note">
         <p class="note-title">Как поставить на iPhone</p>
         <p>
-          Скачайте файл по своей ссылке → «Загрузить» в Safari → откройте
-          приложение WireGuard → «+» → «Импорт из файла или архива» → выберите
-          файл в «Загрузках» → «Сохранить» → включите переключатель. Если файл открылся текстом — нажмите «Поделиться» → «Сохранить в Файлы», окончание должно остаться .conf.
+          Скачайте файл → «Загрузить» в Safari → откройте WireGuard → «+» →
+          «Импорт из файла или архива» → выберите файл в «Загрузках» →
+          «Сохранить» → включите переключатель.
         </p>
-      </div>
-
-      <div class="note">
-        <p class="note-title">Как поставить на Android или Windows</p>
         <p>
-          Android: приложение Kotyara VPN, вход по логину и паролю —
-          <a href="../android.html">инструкция</a>. Windows —
-          <a href="../windows.html">инструкция</a>.
+          Если файл открылся текстом — нажмите «Поделиться» → «Сохранить в
+          Файлы», окончание должно остаться <b>.conf</b>.
         </p>
       </div>
 
       <div class="note warn">
-        <p class="note-title">Ссылку никому не пересылайте</p>
+        <p class="note-title">Один файл — одному человеку</p>
         <p>
-          В файлах ключи доступа. Один файл — один человек: передавайте только
-          сам файл, адрес этой страницы оставляйте себе.
+          В файлах ключи доступа. Не выкладывайте их в общий чат и не пересылайте
+          ссылку на эту страницу: пусть каждый получает свой файл здесь.
         </p>
       </div>
-
-      <h2>Файлы</h2>
-      <ul class="conf-list">
-        <li><a class="conf" download href="kotyara-02.conf"><span class="conf-name">kotyara-02.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-03.conf"><span class="conf-name">kotyara-03.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-04.conf"><span class="conf-name">kotyara-04.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-05.conf"><span class="conf-name">kotyara-05.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-06.conf"><span class="conf-name">kotyara-06.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-07.conf"><span class="conf-name">kotyara-07.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-09.conf"><span class="conf-name">kotyara-09.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-10.conf"><span class="conf-name">kotyara-10.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-11.conf"><span class="conf-name">kotyara-11.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-12.conf"><span class="conf-name">kotyara-12.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-13.conf"><span class="conf-name">kotyara-13.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-14.conf"><span class="conf-name">kotyara-14.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-15.conf"><span class="conf-name">kotyara-15.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-16.conf"><span class="conf-name">kotyara-16.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-17.conf"><span class="conf-name">kotyara-17.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-18.conf"><span class="conf-name">kotyara-18.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-19.conf"><span class="conf-name">kotyara-19.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-20.conf"><span class="conf-name">kotyara-20.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-21.conf"><span class="conf-name">kotyara-21.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-22.conf"><span class="conf-name">kotyara-22.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-23.conf"><span class="conf-name">kotyara-23.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-24.conf"><span class="conf-name">kotyara-24.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-25.conf"><span class="conf-name">kotyara-25.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-26.conf"><span class="conf-name">kotyara-26.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-27.conf"><span class="conf-name">kotyara-27.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-28.conf"><span class="conf-name">kotyara-28.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-29.conf"><span class="conf-name">kotyara-29.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-30.conf"><span class="conf-name">kotyara-30.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-31.conf"><span class="conf-name">kotyara-31.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-32.conf"><span class="conf-name">kotyara-32.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-33.conf"><span class="conf-name">kotyara-33.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-34.conf"><span class="conf-name">kotyara-34.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-35.conf"><span class="conf-name">kotyara-35.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-36.conf"><span class="conf-name">kotyara-36.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-37.conf"><span class="conf-name">kotyara-37.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-38.conf"><span class="conf-name">kotyara-38.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-39.conf"><span class="conf-name">kotyara-39.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-40.conf"><span class="conf-name">kotyara-40.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-41.conf"><span class="conf-name">kotyara-41.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-42.conf"><span class="conf-name">kotyara-42.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-43.conf"><span class="conf-name">kotyara-43.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-44.conf"><span class="conf-name">kotyara-44.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-45.conf"><span class="conf-name">kotyara-45.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-46.conf"><span class="conf-name">kotyara-46.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-47.conf"><span class="conf-name">kotyara-47.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-48.conf"><span class="conf-name">kotyara-48.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-49.conf"><span class="conf-name">kotyara-49.conf</span><span class="conf-dl">Скачать</span></a></li>
-        <li><a class="conf" download href="kotyara-50.conf"><span class="conf-name">kotyara-50.conf</span><span class="conf-dl">Скачать</span></a></li>
-      </ul>
     </main>
 
     <script src="../app.js"></script>
+    <script>
+      (function () {
+        var FILES = ["kotyara-02.conf","kotyara-03.conf","kotyara-04.conf","kotyara-05.conf","kotyara-06.conf","kotyara-07.conf","kotyara-09.conf","kotyara-10.conf","kotyara-11.conf","kotyara-12.conf","kotyara-13.conf","kotyara-14.conf","kotyara-15.conf","kotyara-16.conf","kotyara-17.conf","kotyara-18.conf","kotyara-19.conf","kotyara-20.conf","kotyara-21.conf","kotyara-22.conf","kotyara-23.conf","kotyara-24.conf","kotyara-25.conf","kotyara-26.conf","kotyara-27.conf","kotyara-28.conf","kotyara-29.conf","kotyara-30.conf","kotyara-31.conf","kotyara-32.conf","kotyara-33.conf","kotyara-34.conf","kotyara-35.conf","kotyara-36.conf","kotyara-37.conf","kotyara-38.conf","kotyara-39.conf","kotyara-40.conf","kotyara-41.conf","kotyara-42.conf","kotyara-43.conf","kotyara-44.conf","kotyara-45.conf","kotyara-46.conf","kotyara-47.conf","kotyara-48.conf","kotyara-49.conf","kotyara-50.conf"];
+        var USED_KEY = 'kotyara-configs-used';
+        var button = document.getElementById('get');
+        var result = document.getElementById('result');
+
+        function used() {
+          try { return JSON.parse(localStorage.getItem(USED_KEY) || '[]'); }
+          catch (e) { return []; }
+        }
+
+        function pick() {
+          var taken = used();
+          var free = FILES.filter(function (f) { return taken.indexOf(f) === -1; });
+          var pool = free.length ? free : FILES;
+          var file = pool[Math.floor(Math.random() * pool.length)];
+          if (free.length) {
+            taken.push(file);
+            try { localStorage.setItem(USED_KEY, JSON.stringify(taken)); } catch (e) {}
+          }
+          return { file: file, left: free.length ? free.length - 1 : 0 };
+        }
+
+        button.addEventListener('click', function (event) {
+          event.preventDefault();
+          var chosen = pick();
+          var link = document.createElement('a');
+          link.href = chosen.file;
+          link.download = chosen.file;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          result.innerHTML = 'Скачан <b>' + chosen.file + '</b>. Осталось свободных: <b>' + chosen.left + '</b>.';
+        });
+      })();
+    </script>
   </body>
 </html>
