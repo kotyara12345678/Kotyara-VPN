@@ -500,6 +500,10 @@ li::marker {
   font-size: var(--fs-small);
 }
 
+.shot.narrow img {
+  max-height: 420px;
+}
+
 /* --- плашки ------------------------------------------------------------ */
 
 .note {
