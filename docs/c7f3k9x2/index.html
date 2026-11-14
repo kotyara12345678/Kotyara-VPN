@@ -82,18 +82,20 @@
         function pick() {
           var taken = used();
           var free = FILES.filter(function (f) { return taken.indexOf(f) === -1; });
-          var pool = free.length ? free : FILES;
-          var file = pool[Math.floor(Math.random() * pool.length)];
-          if (free.length) {
-            taken.push(file);
-            try { localStorage.setItem(USED_KEY, JSON.stringify(taken)); } catch (e) {}
-          }
-          return { file: file, left: free.length ? free.length - 1 : 0 };
+          if (!free.length) return null;
+          var file = free[Math.floor(Math.random() * free.length)];
+          taken.push(file);
+          try { localStorage.setItem(USED_KEY, JSON.stringify(taken)); } catch (e) {}
+          return { file: file, left: free.length - 1 };
         }
 
         button.addEventListener('click', function (event) {
           event.preventDefault();
           var chosen = pick();
+          if (!chosen) {
+            result.textContent = 'Свободные конфигурации закончились. Попросите новый набор.';
+            return;
+          }
           var link = document.createElement('a');
           link.href = chosen.file;
           link.download = chosen.file;
